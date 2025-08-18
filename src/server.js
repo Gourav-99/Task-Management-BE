@@ -1,11 +1,13 @@
 import express from "express";
+import dotenv from "dotenv";
 import cors from "cors";
 import taskRoutes from "./routes/tasks.routes.js";
 import morgan from "morgan";
 import { errorHandler, notFound } from "./middlewares/errorHandler.js";
+dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(cors());
