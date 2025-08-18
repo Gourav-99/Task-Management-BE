@@ -1,5 +1,16 @@
 {
-  "presets": [
-    ["@babel/preset-env", { "targets": { "node": "18" } }]
-  ]
-}
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "20",
+            "esmodules":"true"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-transform-class-properties"
+    ]
+  }

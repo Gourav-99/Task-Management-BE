@@ -4,8 +4,8 @@
   "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon --watch src --exec babel-node src/server.js",
-    "build": "webpack --config webpack.config.js --mode production",
+    "build": "npm install && node_modules/.bin/webpack --config webpack.config.js --mode=production",
+    "dev": "node_modules/.bin/webpack --config webpack.config.js --mode=development -w ",
     "start": "node dist/bundle.cjs"
   },
   "dependencies": {
@@ -16,15 +16,14 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.28.3",
     "@babel/core": "^7.28.3",
-    "@babel/node": "^7.28.0",
+    "@babel/plugin-transform-class-properties": "^7.27.1",
     "@babel/preset-env": "^7.28.3",
     "babel-loader": "^10.0.0",
     "nodemon": "^3.1.10",
+    "nodemon-webpack-plugin": "^4.8.2",
     "webpack": "^5.101.3",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-middleware": "^7.4.2",
-    "webpack-node-externals": "^3.0.0"
+    "webpack-dev-server": "^5.2.2"
   }
 }

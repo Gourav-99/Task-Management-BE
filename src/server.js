@@ -4,22 +4,11 @@ import cors from "cors";
 import taskRoutes from "./routes/tasks.routes.js";
 import morgan from "morgan";
 import { errorHandler, notFound } from "./middlewares/errorHandler.js";
-// import webpack from "webpack";
-// import config from "../webpack.config.js";
-// import webpackDevMiddleware from 'webpack-dev-middleware';
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// if (process.env.NODE_ENV !== 'production') {
-//   const compiler = webpack(config);
-//   app.use(
-//     webpackDevMiddleware(compiler, {
-//       publicPath: config.output.publicPath || '/',
-//     })
-//   );
-// }
 // Middleware
 app.use(cors());
 app.use(express.json());
