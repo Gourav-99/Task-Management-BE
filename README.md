@@ -42,12 +42,6 @@ npm run build
 ```bash
 npm start
 ```
-
-### 6. Alternative (build + watch dist)
-```bash
-npm run start:dev:bundle
-```
-
 ---
 
 ## 🛠️ Tech Stack
