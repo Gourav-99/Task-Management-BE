@@ -6,12 +6,14 @@
   "scripts": {
     "build": "npm install && node_modules/.bin/webpack --config webpack.config.js --mode=production",
     "dev": "node_modules/.bin/webpack --config webpack.config.js --mode=development -w ",
-    "start": "node dist/bundle.cjs"
+    "start": "node dist/bundle.cjs",
+    "test": "jest --runInBand"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "jest": "^30.0.5",
     "morgan": "^1.10.1",
     "uuid": "^11.1.0"
   },

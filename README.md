@@ -38,7 +38,12 @@ npm run dev
 npm run build
 ```
 
-### 5. Run production build
+### 5. Run Test Cases
+```bash
+npm run test
+```
+
+### 6. Run production build
 ```bash
 npm start
 ```
@@ -62,6 +67,7 @@ task-manager-backend/
 │   ├── controllers/ # Request handlers
 │   ├── db/          # Data
 │   └── middleware/  # Custom middlewares
+|   └── tests/       # Unit test cases
 ├── dist/            # Production build (output from Webpack)
 ├── package.json     # Dependencies and scripts
 ├── webpack.config.js # Webpack configuration
