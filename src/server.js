@@ -4,7 +4,6 @@ import cors from "cors";
 import taskRoutes from "./routes/tasks.routes.js";
 import morgan from "morgan";
 import { errorHandler, notFound } from "./middlewares/errorHandler.js";
-import ExpressMongoSanitize from "express-mongo-sanitize";
 dotenv.config();
 
 const app = express();
@@ -14,7 +13,6 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(ExpressMongoSanitize());
 
 // Routes
 app.get("/", (req, res) => {
