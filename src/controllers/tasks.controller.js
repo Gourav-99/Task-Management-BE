@@ -5,7 +5,7 @@ import { validateTaskPayload } from '../utils/validate.js';
 // GET /tasks
 export const getAllTasks = async (req, res) => {
   try {
-    const { page = 1, limit = 5, filter = "all", sort = "asc" } = req.query;
+    const { page = 1, limit = 5, filter = "all", sort = "asc", search = "" } = req.query;
 
     let tasks = await db.readTasks();
 
@@ -14,6 +14,14 @@ export const getAllTasks = async (req, res) => {
       tasks = tasks.filter(t => t.completed === true);
     } else if (filter === "notcompleted") {
       tasks = tasks.filter(t => t.completed === false);
+    }
+
+    // Searching
+    if (search) {
+      tasks = tasks.filter(t =>
+        t.title.toLowerCase().includes(search.toLowerCase()) ||
+        t.description.toLowerCase().includes(search.toLowerCase())
+      );
     }
 
     // Sorting
